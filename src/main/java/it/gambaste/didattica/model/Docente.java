@@ -3,17 +3,16 @@ package it.gambaste.didattica.model;
 import java.util.Set;
 
 public class Docente {
-    private int id;
-    private String nome;
-    private String cognome;
+    private Integer id;
+    private String nome, cognome;
     private String email;
     private Set<Materia> materieInsegnate;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

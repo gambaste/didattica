@@ -1,21 +1,24 @@
-package it.gambaste.didattica.model;
+package it.gambaste.didattica.dto;
+
+import it.gambaste.didattica.model.Corso;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-public class Studente {
-    private Integer id;
+public class StudenteRequestDto {
     private String nome, cognome;
     private String email;
     private LocalDate dataNascita;
     private Set<Corso> corsiSeguiti;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public List<Integer> getCorsiSeguitiId() {
+        List<Integer> corsiSeguitiId = new ArrayList<>();
+        for (Corso corso : corsiSeguiti) {
+            corsiSeguitiId.add(corso.getId());
+        }
+        return corsiSeguitiId;
     }
 
     public String getNome() {
@@ -26,35 +29,35 @@ public class Studente {
         this.nome = nome;
     }
 
-    public String getCognome() {
-        return cognome;
-    }
-
     public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public LocalDate getDataNascita() {
-        return dataNascita;
-    }
-
     public void setDataNascita(LocalDate dataNascita) {
         this.dataNascita = dataNascita;
     }
 
-    public Set<Corso> getCorsiSeguiti() {
-        return corsiSeguiti;
-    }
-
     public void setCorsiSeguiti(Set<Corso> corsiSeguiti) {
         this.corsiSeguiti = corsiSeguiti;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public LocalDate getDataNascita() {
+        return dataNascita;
+    }
+
+    public Set<Corso> getCorsiSeguiti() {
+        return corsiSeguiti;
     }
 }

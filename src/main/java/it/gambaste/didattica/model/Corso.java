@@ -1,19 +1,19 @@
 package it.gambaste.didattica.model;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 public class Corso {
-    private int id;
+    private Integer id;
     private String nome;
-    private LocalDate dataInizio;
-    private LocalDate dataFine;
-    private Docente insegnanti;
+    private LocalDate dataInizio, dateFine;
+    private Set<Docente> insegnanti;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,19 +33,19 @@ public class Corso {
         this.dataInizio = dataInizio;
     }
 
-    public LocalDate getDataFine() {
-        return dataFine;
+    public LocalDate getDateFine() {
+        return dateFine;
     }
 
-    public void setDataFine(LocalDate dataFine) {
-        this.dataFine = dataFine;
+    public void setDateFine(LocalDate dateFine) {
+        this.dateFine = dateFine;
     }
 
-    public Docente getInsegnanti() {
+    public Set<Docente> getInsegnanti() {
         return insegnanti;
     }
 
-    public void setInsegnanti(Docente insegnanti) {
+    public void setInsegnanti(Set<Docente> insegnanti) {
         this.insegnanti = insegnanti;
     }
 }
